@@ -12,17 +12,23 @@
 
 @keyframes heart-scale {
   0% {
-     transform: scale(1); 
-  } 
-  100% { 
+     transform: scale(1);
+  }
+  100% {
     transform: scale(0.25);
   }
 }
 
 @keyframes sparks-flash {
-  0%   { opacity: 0; transform: scale(0.5); }
-  50%  { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 0; transform: scale(0.5); }
+  0% {
+    opacity: 0; transform: scale(0.5);
+  }
+  50% {
+    opacity: 1; transform: scale(1.2);
+  }
+  100% {
+    opacity: 0; transform: scale(0.5);
+  }
 }
 
 .page {
@@ -130,7 +136,7 @@
   right: 25px;
   font-family: var(--second-family);
   font-weight: var(--font-weight-regular), 400;
-  font-size: 14px;  
+  font-size: 14px;
   color: var(--text-color);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
@@ -226,7 +232,7 @@
 .button {
   position: relative;
   overflow: hidden;
-  outline: none; 
+  outline: none;
   transition: border 0.3s ease;
 }
 
@@ -254,7 +260,7 @@
   align-items: center;
   justify-self: center;
   display: flex;
-  gap: 8px; 
+  gap: 8px;
   margin-block-end: 103px;
   padding: 15px 20px;
 }
@@ -354,11 +360,7 @@ dialog[open] {
   transition-delay: 0.05s;
 }
 
-.card__icon-button .like-icon .contour {
-  transition-delay: 0.03s;
-}
-
-.card__icon-button .like-icon .main-body {  
+.card__icon-button .like-icon .main-body {
   transition-delay: 0s;
 }
 
