@@ -1,1 +1,1 @@
- https://aisuluturlybai.github.io/zakrivayuschiy-teg-f/
+https://github.com/AisuluTurlybai/zakrivayuschiy-teg-f
