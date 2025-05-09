@@ -10,33 +10,11 @@
 
 */
 
-@keyframes heart-scale {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.25);
-  }
-}
-
-@keyframes sparks-flash {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}
-
 .page {
   font-family: var(--font-family);
+  font-variation-settings: var(--font-weight-regular, 400);
   background-image: var(--custom-background);
+  background-attachment: fixed; 
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -52,7 +30,7 @@
 
 .header-logo {
   font-family: var(--second-family);
-  font-weight: var(--font-weight-regular), 400;
+  font-weight: var(--font-weight-regular, 400);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,11 +40,13 @@
 }
 
 .logo {
-  font-size: clamp(3.0625rem, 2.502rem + 2.3916vw, 4.0625rem);
+  /* font-size: clamp(49px, 50%, 65px); */
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header-text {
-  font-size: clamp(0.875rem, 0.5597rem + 1.3453vw, 1.4375rem);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  /* clamp(14px, 50%, 23px); */
 }
 
 .main {
@@ -82,11 +62,10 @@
 }
 
 .post-title {
-  font-family: var(--font-family), sans-serif;
-  font-variation-settings: 'wght' var( --font-weight-bold), 700;
+  font-family: var(--font-family);
+  font-variation-settings: 'wght' var(--font-weight-bold, 700);
   font-size: 18px;
   color: var(--text-color);
-  white-space: pre-line;
   padding-block: 5px;
   padding-inline-start: 10px;
   padding-inline-end: 24px;
@@ -95,42 +74,44 @@
 
 .container {
   position: relative;
-  display: block;
-  overflow: hidden;
+  display: block; 
   border: 2px solid var(--border-color);
 }
 
 .post-image {
-  display: block;
-  inline-size: 100%;
-  min-block-size: 696px;
+  object-fit: cover;
+  object-position: center;
+  display: block; 
+  inline-size: 100%; 
+  block-size: 100vh; 
+  max-block-size: 696px;
 }
 
-.image__filter-HTML {
+.image__filter-grayscale {
   filter: grayscale(0.8);
 }
 
-.image__filter-css {
+.image__filter-saturate {
   filter: saturate(360%);
 }
 
-.image__filter-desigions {
+.image__filter-hue-rotate {
   filter: hue-rotate(40deg);
 }
 
-.image__filter-care {
+.image__filter-invert {
   filter: invert(0.7);
 }
 
-.image__filter-support {
+.image__filter-sepia {
   filter: sepia(80%);
 }
 
-.image__filter-lifes-style {
+.image__filter-lifes-blur {
   filter: blur(1rem);
 }
 
-.image__filter-experience {
+.image__filter-multiple {
   filter: contrast(20%) saturate(260%) hue-rotate(90deg);
 }
 
@@ -139,23 +120,22 @@
   top: 27px;
   right: 25px;
   font-family: var(--second-family);
-  font-weight: var(--font-weight-regular), 400;
+  font-weight: var(--font-weight-regular, 400);
   font-size: 14px;
   color: var(--text-color);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   pointer-events: none;
-  -webkit-text-stroke: 0.5px var(--stroke-color);
 }
 
 .label-transform {
   text-transform: lowercase;
 }
 
-@supports (-webkit-text-stroke: 0.5px var(--stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--stroke-color)) {
   .label {
-    -webkit-text-stroke: 0.5px var(--stroke-color);
+    -webkit-text-stroke: 1px var(--stroke-color);
   }
 } 
 
@@ -177,11 +157,14 @@
 }
 
 .content-text {
-  font-weight: var(--font-weight-regular), 400;
+  font-weight: var(--font-weight-regular, 400);
   font-size: 18px;
   line-height: 117%;
   color: var(--text-color);
-  letter-spacing: 0.54px;
+}
+
+.text {
+  padding-inline-end: 35px;
 }
 
 .buttons {
@@ -189,14 +172,17 @@
   align-items: center;
   justify-self: end;
   display: flex;
-  gap:8px;
+  gap:5px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
 }
 
 .card__icon-button {
-  padding-block-start: 4px;
-  padding-block-end: 0px;
+  block-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0;
   padding-inline: 0;
   background-color: transparent;
   border: none;
@@ -205,18 +191,23 @@
   transition: border 0.3s ease;
 }
 
+.card__icon-button svg {
+  margin: auto;
+}
+
 .card__like-button {
   background-color: transparent;
   border: 2px solid var(--border-color);
-  padding-block: 10.5px;
-  padding-inline: 35px;
+  padding-block: 9px;
+  padding-inline: 17px;
   block-size: 38px;
-  cursor: pointer;
+  inline-size: 130px;
+  cursor: pointer;  
 }
 
 .button__text {
   font-family: var(--second-family);
-  font-weight: var(--font-weight-regular), 400;
+  font-weight: var(--font-weight-regular, 400);
   font-size: 14px;
   line-height: 90%;
   color: var(--stroke-color);
@@ -225,19 +216,11 @@
   mix-blend-mode: difference;
 }
 
-.card__icon-button:focus-visible {
-  border: 2px solid var(--border-color);
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--border-color);
-}
-
 .button {
   position: relative;
   overflow: hidden;
   outline: none;
-  transition: border 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -251,10 +234,6 @@
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: 0;
-}
-
-.button:hover::before {
-  transform: translateX(0);
 }
 
 .save-memory {
@@ -277,15 +256,15 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
-} 
+  background-color: rgb(0 0 0 / 0.75);
+}
 
 dialog[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-inline: 30px;
+  padding-inline-start: 30px;
+  padding-inline-end: 30px;
   padding-block: 30px;
   inline-size: 353px;
 }
@@ -296,7 +275,7 @@ dialog[open] {
 
 .content-dialog {
   display: flex;
-  gap: 14px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -316,86 +295,13 @@ dialog[open] {
 }
 
 .close {
+  inline-size: 293px;
+  block-size: 38px;
   background-color: var(--stroke-color);
   border: 2px solid var(--border-color);
-  padding-block: 9px;
+  padding-block: 8px;
   padding-inline: 17px;
-}
-
-
-.like-icon .main-body,
-.like-icon .contour {
-  transition: fill 0.3s ease;
-  fill: none;
-}
-
-.like-icon .core {
-  fill: var(--contour-color);
-  transition-delay: 0s;
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
-}
-
-.card__icon-button:hover .like-icon .contour {
-  fill: var(--contour-color);
-  transition-delay: 0s;
-}
-
-.card__icon-button:hover .like-icon .main-body {
-  fill: var(--contour-color);
-  transition-delay: 0.05s;
-}
-
-.card__icon-button .like-icon .contour {
-  transition-delay: 0.03s;
-}
-
-.card__icon-button .like-icon .main-body {
-  transition-delay: 0s;
-}
-
-.card__icon-button:active .like-icon .contour {
-  fill: var(--animation-fill-color);
-  transition-delay: 0s;
-}
-
-.card__icon-button:active .like-icon .main-body {
-  fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition-delay: 0s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition-delay: 0.06s;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-}
-
-.like-icon .heart {
-  transform-origin: center;
-}
-
-.like-icon.is-liked .heart {
-  animation: heart-scale 0.1s 0.3s ease-in;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-  transform-origin: center;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks-flash 0.3s 0.3s ease-in;
+  text-transform: uppercase;
 }
 
 @media (width <= 376px) {
@@ -407,7 +313,7 @@ dialog[open] {
     margin-block-end: 49.5px;
   }
   .post-image {
-    min-block-size: 371px;
+    max-block-size: 371px;
   }
 
   .post-title {
@@ -422,6 +328,10 @@ dialog[open] {
 
   .text {
     padding-inline-end: 28.95px;
+  }
+
+  .post-text {
+    padding-inline-end: 27px;
   }
 
   .label {
@@ -439,11 +349,16 @@ dialog[open] {
     flex-direction: column;
     gap: 8px;
   }
-  .content-dialog {
+  /* .content-dialog {
     gap: 12px;
-  }
+  } */
 
   dialog[open] {
-    padding-inline: 40px;
+    inline-size: 341px;
+    padding-inline: 39px;
+  }
+
+  .close {
+    inline-size: 257px;
   }
 }
