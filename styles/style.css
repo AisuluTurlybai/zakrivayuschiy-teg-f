@@ -12,9 +12,9 @@
 
 .page {
   font-family: var(--font-family);
-  font-variation-settings: var(--font-weight-regular, 400);
+  font-variation-settings: 'wght' var(--font-weight-regular, 400);
   background-image: var(--custom-background);
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -74,16 +74,16 @@
 
 .container {
   position: relative;
-  display: block; 
+  display: block;
   border: 2px solid var(--border-color);
 }
 
 .post-image {
   object-fit: cover;
   object-position: center;
-  display: block; 
-  inline-size: 100%; 
-  block-size: 100vh; 
+  display: block;
+  inline-size: 100%;
+  block-size: 100vh;
   max-block-size: 696px;
 }
 
@@ -202,7 +202,7 @@
   padding-inline: 17px;
   block-size: 38px;
   inline-size: 130px;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .button__text {
