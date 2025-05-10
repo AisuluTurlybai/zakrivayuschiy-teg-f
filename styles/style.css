@@ -78,7 +78,7 @@
 .post-image {
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;  
+  inline-size: 100%;
   max-block-size: 696px;
   border: 2px solid var(--border-color);
 }
