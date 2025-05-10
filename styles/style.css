@@ -40,13 +40,12 @@
 }
 
 .logo {
-  /* font-size: clamp(49px, 50%, 65px); */
+  text-decoration: none;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header-text {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  /* clamp(14px, 50%, 23px); */
 }
 
 .main {
@@ -69,22 +68,19 @@
   padding-block: 5px;
   padding-inline-start: 10px;
   padding-inline-end: 24px;
-  letter-spacing: 0.1px;
 }
 
 .container {
   position: relative;
   display: block;
-  border: 2px solid var(--border-color);
 }
 
 .post-image {
   object-fit: cover;
   object-position: center;
-  display: block;
-  inline-size: 100%;
-  block-size: 100vh;
+  inline-size: 100%;  
   max-block-size: 696px;
+  border: 2px solid var(--border-color);
 }
 
 .image__filter-grayscale {
@@ -349,10 +345,7 @@ dialog[open] {
     flex-direction: column;
     gap: 8px;
   }
-  /* .content-dialog {
-    gap: 12px;
-  } */
-
+ 
   dialog[open] {
     inline-size: 341px;
     padding-inline: 39px;
